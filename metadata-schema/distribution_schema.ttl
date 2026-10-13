@@ -1,0 +1,57 @@
+@prefix :     <http://fairdatapoint.org/> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+:DistributionShape
+    a sh:NodeShape ;
+    sh:targetClass dcat:Distribution ;
+
+    sh:property [
+        sh:path dcat:downloadURL ;
+        sh:name "Download URL" ;
+        sh:description "Persistent W3ID link to the downloadable file" ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        dash:editor dash:URIEditor ;
+        dash:viewer dash:LabelViewer ;
+        sh:order 20
+    ] ;
+
+    sh:property [
+        sh:path dct:format ;
+        sh:name "Format" ;
+        sh:description "File format of this distribution, for example CSV or Turtle" ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        dash:editor dash:TextFieldEditor ;
+        dash:viewer dash:LiteralViewer ;
+        sh:order 21
+    ] ;
+
+    sh:property [
+        sh:path dct:issued ;
+        sh:name "Issued" ;
+        sh:description "Date on which this distribution was issued" ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+        dash:editor dash:DateTimePickerEditor ;
+        dash:viewer dash:LiteralViewer ;
+        sh:order 22
+    ] ;
+
+    sh:property [
+        sh:path dct:modified ;
+        sh:name "Modified" ;
+        sh:description "Date on which this distribution was last modified" ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+        dash:editor dash:DateTimePickerEditor ;
+        dash:viewer dash:LiteralViewer ;
+        sh:order 23
+    ] .
