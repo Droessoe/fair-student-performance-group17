@@ -1,0 +1,66 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix dcite: <http://purl.org/spar/datacite/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix language: <http://id.loc.gov/vocabulary/iso639-1/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix sio: <http://semanticscience.org/resource/>.
+@prefix wd: <https://www.wikidata.org/wiki/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix d: <http://localhost:8080/dataset/>.
+@prefix n0: <http://localhost:8080/dataset/62513133-9c37-4c9b-909c-188160744f34#>.
+@prefix pro: <http://localhost:8080/profile/>.
+@prefix www: <https://www.kaggle.com/>.
+@prefix c: <http://localhost:8080/catalog/>.
+@prefix n1: <https://creativecommons.org/licenses/by-nc-sa/4.0/>.
+@prefix met: <http://localhost:8080/dataset/62513133-9c37-4c9b-909c-188160744f34/metrics/>.
+@prefix dis: <http://localhost:8080/distribution/>.
+@prefix fdp: <https://w3id.org/fdp/fdp-o#>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+
+d:62513133-9c37-4c9b-909c-188160744f34
+    a dcat:Dataset, dcat:Resource;
+    dct:accessRights n0:accessRights;
+    dct:conformsTo pro:2f08228e-1789-40f8-84cd-28e3288c3604;
+    dct:creator www:mobeenfatimah;
+    dct:description
+        "FAIRified subset of the Student Exam Performance & Success Dataset containing 2,000 student records and selected attributes related to student characteristics, study behaviour and exam performance.";
+    dct:isPartOf c:fba4b874-6eaa-4131-82b1-92c380eb709a;
+    dct:issued "2026-10-23T12:30:00Z"^^xsd:dateTime;
+    dct:language language:en;
+    dct:license n1:;
+    dct:modified "2026-10-23T12:31:00Z"^^xsd:dateTime;
+    dct:publisher [ a foaf:Agent; foaf:name "Group 17" ];
+    dct:title "Student Exam Performance Dataset";
+    sio:SIO_000628
+    met:445c0a70d1e214e545b261559e2842f4, met:5d27e854a9e78eb3f663331cd47cdc13;
+    rdfs:label "Student Exam Performance Dataset";
+    dcat:distribution
+        dis:2a617893-885e-4344-8d06-6e07aff9527c,
+        dis:2d70068c-1347-4ed7-9ed0-9b4c5c9e1e49;
+    dcat:keyword "FAIR data", "education", "exam", "student performance";
+    dcat:version "1.0";
+    fdp:metadataIdentifier n0:identifier;
+    fdp:metadataIssued "2026-10-23T12:33:01.805432456Z"^^xsd:dateTime;
+    fdp:metadataModified "2026-10-23T12:47:19.87883037Z"^^xsd:dateTime.
+met:445c0a70d1e214e545b261559e2842f4
+    sio:SIO_000332 <https://www.ietf.org/rfc/rfc3986.txt>;
+    sio:SIO_000628 <https://www.ietf.org/rfc/rfc3986.txt>.
+met:5d27e854a9e78eb3f663331cd47cdc13
+sio:SIO_000332 wd:Q8777; sio:SIO_000628 wd:Q8777.
+n0:accessRights
+    a dct:RightsStatement;
+    dct:description "This resource has no access restriction".
+n0:identifier
+    a dcite:Identifier;
+    dct:identifier
+    "http://localhost:8080/dataset/62513133-9c37-4c9b-909c-188160744f34".
+dis:
+    a ldp:DirectContainer;
+    dct:title "Distributions";
+    ldp:contains
+        dis:2a617893-885e-4344-8d06-6e07aff9527c,
+        dis:2d70068c-1347-4ed7-9ed0-9b4c5c9e1e49;
+    ldp:hasMemberRelation dcat:distribution;
+    ldp:membershipResource d:62513133-9c37-4c9b-909c-188160744f34.
+pro:2f08228e-1789-40f8-84cd-28e3288c3604 rdfs:label "Dataset Profile".
