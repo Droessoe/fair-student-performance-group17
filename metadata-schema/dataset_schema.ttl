@@ -1,0 +1,98 @@
+@prefix :     <http://fairdatapoint.org/> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+:DatasetShape
+    a sh:NodeShape ;
+    sh:targetClass dcat:Dataset ;
+
+    sh:property [
+        sh:path dcat:keyword ;
+        sh:name "Keyword" ;
+        sh:datatype xsd:string ;
+        dash:editor dash:TextFieldEditor ;
+        dash:viewer dash:LiteralViewer ;
+        sh:order 20
+    ] ;
+
+    sh:property [
+        sh:path dct:creator ;
+        sh:name "Creator" ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+        dash:editor dash:URIEditor ;
+        dash:viewer dash:LabelViewer ;
+        sh:order 21
+    ] ;
+
+    sh:property [
+        sh:path dct:issued ;
+        sh:name "Issued" ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+        dash:editor dash:DateTimePickerEditor ;
+        dash:viewer dash:LiteralViewer ;
+        sh:order 22
+    ] ;
+
+    sh:property [
+        sh:path dcat:distribution ;
+        sh:name "Distribution" ;
+        sh:nodeKind sh:IRI ;
+        dash:editor dash:URIEditor ;
+        dash:viewer dash:LabelViewer ;
+        sh:order 23
+    ] ;
+
+    sh:property [
+        sh:path dct:identifier ;
+        sh:name "Identifier" ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        dash:editor dash:TextFieldEditor ;
+        dash:viewer dash:LiteralViewer ;
+        sh:order 24
+    ] ;
+
+    sh:property [
+        sh:path dcat:contactPoint ;
+        sh:name "Contact point" ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+        dash:editor dash:URIEditor ;
+        dash:viewer dash:LabelViewer ;
+        sh:order 25
+    ] ;
+
+    sh:property [
+        sh:path dct:accessRights ;
+        sh:name "Access rights" ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+        dash:editor dash:URIEditor ;
+        dash:viewer dash:LabelViewer ;
+        sh:order 26
+    ] ;
+
+    sh:property [
+        sh:path dct:modified ;
+        sh:name "Modified" ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+        dash:editor dash:DateTimePickerEditor ;
+        dash:viewer dash:LiteralViewer ;
+        sh:order 27
+    ] ;
+
+    sh:property [
+        sh:path dct:conformsTo ;
+        sh:name "Conforms to" ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+        dash:editor dash:URIEditor ;
+        dash:viewer dash:LabelViewer ;
+        sh:order 28
+    ] .
